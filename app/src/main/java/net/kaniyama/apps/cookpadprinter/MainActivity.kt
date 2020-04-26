@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
         // Loading some data
         if (intent!!.action != Intent.ACTION_SEND) return
         val extras = intent.extras ?: return
-        val ext = extras.getCharSequence(Intent.EXTRA_TEXT).toString() ?: return
+        val ext = extras.getCharSequence(Intent.EXTRA_TEXT).toString()
 
         // return when it haven't been found cookpad URL.
         if (!ext.contains(CookpadURL.sharedURLHead)){
-            Toast.makeText(context,"cookpadのURLを認識できませんでした", Toast.LENGTH_SHORT).show()
-            return
+            Toast.makeText(context,"cookpadのURLを認識できませんでした", Toast.LENGTH_LONG).show()
+            finish()
         }
 
         // cutting from intent's extra text
@@ -71,13 +71,23 @@ class MainActivity : AppCompatActivity() {
             // Get a print adapter instance
             val printAdapter = webView.createPrintDocumentAdapter(jobName)
 
+            // set A4 Size & Color
+            val printAttributes = PrintAttributes.Builder().also {
+                it.setMediaSize(PrintAttributes.MediaSize.ISO_A4)
+                it.setColorMode(PrintAttributes.COLOR_MODE_COLOR)
+            }.build()
+
             // Create a print job with name and adapter instance
             printManager.print(
                 jobName,
                 printAdapter,
-                PrintAttributes.Builder().build()
+                printAttributes
             )
         }
     }
 
+    override fun onActivityReenter(resultCode: Int, data: Intent?) {
+        super.onActivityReenter(resultCode, data)
+        finish()
+    }
 }
