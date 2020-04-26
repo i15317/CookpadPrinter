@@ -1,4 +1,6 @@
 # CookpadPrinter
+[![Build Status](https://app.bitrise.io/app/a86c22def1e38b62/status.svg?token=cy77spzUPzBQWaif5XHMhg&branch=master)](https://app.bitrise.io/app/a86c22def1e38b62)
+
 クックパッドアプリの「レシピ共有」から手軽に印刷できる、android用のアプリです。親が最近使い始めたので作ってみました。 ~~これがあればタダで母の日プレゼントクエストが達成出来ます~~ 
 
 # install
