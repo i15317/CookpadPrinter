@@ -4,7 +4,7 @@
 # install
 なんとなくdeploygateで共有リンクを作成しています。尚、 **既知のバグがあります** 。使用は自己責任でお願いします。
 
-[https://dply.me/o5hpw9](https://dply.me/o5hpw9)
+[<img src="https://dply.me/o5hpw9/button/large" alt="Try it on your device via DeployGate">](https://dply.me/o5hpw9#install)
 
 # Usage
 クックパッドアプリの「共有」から「レシピを印刷」をタップして、画面が切り替わったら暫く待つとOSの印刷画面に飛びます。
